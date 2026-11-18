@@ -62,6 +62,23 @@
   ]
 }
 </script>
+<style>/* home hero form + photo */
+.lg-form{background:#fff;color:#1a1a1a;border-radius:12px;padding:22px;box-shadow:0 14px 40px rgba(0,0,0,.3);text-align:left;max-width:460px;width:100%;justify-self:end}
+.lg-form h2{font-size:22px;font-weight:800;color:#111;margin:0 0 4px;line-height:1.2}
+.lg-form .lg-note{font-size:14px;color:#555;margin:0 0 10px}
+.lg-form label{display:block;font-size:13px;font-weight:700;color:#222;margin:9px 0 4px}
+.lg-form input,.lg-form select{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid #d6d9de;border-radius:6px;font-size:15px;font-family:inherit;background:#fff;color:#111}
+.lg-form button{width:100%;margin-top:14px;background:rgb(217, 164, 65);color:#fff;border:0;border-radius:8px;padding:13px;font-size:16px;font-weight:800;cursor:pointer;font-family:inherit}
+.lg-form button:hover{filter:brightness(.92)}
+.lg-form .lg-alt{text-align:center;font-size:14px;margin:10px 0 0;color:#555}
+.lg-form .lg-alt a{color:#111;font-weight:700}
+.lg-grid{display:grid !important;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;text-align:left}
+.lg-form form{background:none !important;border:0 !important;padding:0 !important;box-shadow:none !important;margin:0 !important;max-width:none !important}
+.hero > .lg-form{align-self:center;justify-self:start;margin:48px 5% 48px 24px}
+.hero p:not([class*=phone]) a:not([class]){color:#fff;text-decoration:underline}
+.lg-form .lg-alt a{color:#111 !important}
+@media (max-width:860px){.hero > .lg-form{margin:0 5% 40px;justify-self:stretch;width:auto} .lg-grid{grid-template-columns:1fr !important} .lg-form{justify-self:stretch;max-width:none}}
+</style>
 </head>
 <body>
 
@@ -88,7 +105,7 @@
   </div>
 </header>
 
-<section class="hero">
+<section class="hero" style="background:linear-gradient(90deg,rgba(15,36,56,0.93) 0%,rgba(15,36,56,0.84) 50%,rgba(15,36,56,0.62) 100%),url('hero-squeegee-window-cleaning-jacksonville.webp') center/cover no-repeat;">
   <div class="wrap hero-grid">
     <div>
       <p class="eyebrow">Jacksonville, Florida</p>
@@ -104,8 +121,31 @@
         <span>Serving all of Duval County</span>
       </div>
     </div>
-    <div>
-      <img src="hero-squeegee-window-cleaning-jacksonville.webp" alt="Window cleaning technician pulling a squeegee across a streak-free window at a Jacksonville, FL home" width="1500" height="1006" fetchpriority="high" decoding="async">
+    <div class="lg-form">
+      <h2>Get a Free Estimate</h2>
+      <p class="lg-note">Tell us what you need and we&rsquo;ll call you back the same working day.</p>
+      <form action="https://formspree.io/f/xeeyqoyp" method="POST">
+        <input type="hidden" name="_subject" value="New Lead &mdash; Jacksonville Window Cleaning Co. (Home Page)">
+        <label for="lg-name">Name *</label>
+        <input type="text" id="lg-name" name="name" autocomplete="name" required>
+        <label for="lg-phone">Phone *</label>
+        <input type="tel" id="lg-phone" name="phone" autocomplete="tel" required>
+        <label for="lg-email">Email</label>
+        <input type="email" id="lg-email" name="email" autocomplete="email">
+        <label for="lg-service">Service needed</label>
+        <select id="lg-service" name="service">
+          <option>Residential Window Cleaning</option>
+          <option>Commercial Window Cleaning</option>
+          <option>Screen &amp; Track Cleaning</option>
+          <option>Hard Water Stain Removal</option>
+          <option>Not Sure / Other</option>
+        </select>
+        <label for="lg-details">Details</label>
+        <input type="text" id="lg-details" name="details" placeholder="Size, condition, timing">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        <button type="submit">Send My Request</button>
+      </form>
+      <p class="lg-alt">Prefer to talk? <a href="tel:9049447358">Call (904) 944-7358</a></p>
     </div>
   </div>
 </section>
